@@ -6,8 +6,10 @@ const mongoose = require('mongoose');
 const path = require('path');
 //引入post参数解析模块
 const bodyParser = require('body-parser');
-// 引入session模块
+//引入session模块
 var session = require('express-session');
+//引入formdata数据类型处理模块
+const formidable = require('formidable');
 // web服务器
 const app = express();
 // 开放静态资源
