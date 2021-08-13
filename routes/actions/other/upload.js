@@ -9,12 +9,9 @@ module.exports = async (req, res) => {
 	form.keepExtensions = true;
 	//解析客户端传递过来的FormData对象
 	form.parse(req, (err, fields, files) =>{    //files.attrName.path为文件存储在服务器硬盘路径
-		console.log('123');
-		/*res.send({
-			path : files.attrName
-			//.path.split('public')[1]
-		});*/
-		res.send('ok');
+		res.send({
+			path : files.avatar.path.split('public')[1]
+		});
 	});
 	
 	/*

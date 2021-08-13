@@ -25,7 +25,6 @@ $('#avatar').on('change', function () {
 	// this.files[0]
 	var formData = new FormData();
 	formData.append('avatar', this.files[0]);
-	console.log(formData);
 	$.ajax({
 		type: 'post',
 		url: '/upload',
@@ -35,10 +34,10 @@ $('#avatar').on('change', function () {
 		// 告诉$.ajax方法不要设置请求参数的类型
 		contentType: false,
 		success: function (response) {
-			console.log(response)
+			console.log(response);
 			// 实现头像预览功能
-			//$('#preview').attr('src', response[0].avatar);
-			//$('#hiddenAvatar').val(response[0].avatar)
+			$('#preview').attr('src', response.path);
+			$('#hiddenAvatar').val(response.path)
 		}
 	})
 });
